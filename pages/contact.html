@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Spark Bin</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 20px;
+    background-color:#0044cc ;
+}
+.brand{
+    display: flex;
+    align-items: flex-start;
+}
+.logo{
+    height: 100px;
+    width: auto;
+    margin-right: 10px;
+    
+}
+.company-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 30px;
+}
+
+.nav-links {
+  display:flex; justify-content:end; gap:50px;
+  background:#0044cc; padding:15px; color:#fff;
+}
+nav a {
+  color:#fff; text-decoration:none; font-weight:600;
+}
+nav a:hover { text-decoration:underline; }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      margin-bottom: 30px;
+      padding: 15px;
+      background: #eef4ff;
+      border-radius: 8px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+
+    .contact-form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 12px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #007bff;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .contact-form button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="brand">
+        <img src="../assets/logo2.png" alt="Spark Bin Logo" class="logo">
+        <span class="company-name">Spark Bin</span>
+      </div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="./product.html">Products</a>
+
+        <a href="./login.html">Login</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <div class="container">
+    <h2>Contact Us</h2>
+
+    <div class="contact-info">
+      <p><b>📍 Address:</b> 123 Green Street, Guindy, Chennai, India</p>
+      <p><b>📞 Phone:</b> +91 98765 43210</p>
+      <p><b>✉️ Email:</b> support@sparkbin.com</p>
+    </div>
+
+    <form class="contact-form" onsubmit="showMessage(); return false;">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Type your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    function showMessage() {
+      alert("✅ Thank you! Your message has been sent.");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Now - Spark Bin</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="script.js" defer></script>
+  <style>
+    .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 20px;
+    background-color:#0044cc ;
+}
+.brand{
+    display: flex;
+    align-items: flex-start;
+}
+.logo{
+    height: 100px;
+    width: auto;
+    margin-right: 10px;
+    
+}
+.company-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 30px;
+}
+
+.nav-links {
+  display:flex; justify-content:end; gap:50px;
+  background:#0044cc; padding:15px; color:#fff;
+}
+nav a {
+  color:#fff; text-decoration:none; font-weight:600;
+}
+nav a:hover { text-decoration:underline; }
+    /* Popup style */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    .popup-content h2 {
+      margin-bottom: 10px;
+      color: green;
+    }
+    .popup-content p {
+      margin-bottom: 20px;
+    }
+    .tick {
+      font-size: 60px;
+      color: green;
+      margin-bottom: 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+    <div class="brand">
+    <img src="../assets/logo2.png" alt="logo" class="logo">
+    <span class="company-name">Spark Bin</span>
+    </div>
+    <div class="nav-links">
+    <a href="/index.html">Home</a>
+    <a href="./product.html">Products</a>
+    <a href="./login.html">Login</a>
+    <a href="./contact.html">Contact</a>
+    </div>
+  </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <h1>Order Now</h1>
+    <form id="orderForm">
+      <!-- Product Details -->
+      
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+      <!-- Customer Info -->
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="address">Delivery Address:</label>
+      <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn">Place Order</button>
+    </form>
+  </main>
+
+  <!-- Success Popup -->
+  <div class="popup" id="successPopup">
+    <div class="popup-content">
+      <div class="tick">✔</div>
+      <h2>Order Received!</h2>
+      <p>Your receipt has been sent to your email.</p>
+      <button onclick="closePopup()" class="btn">OK</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Spark Bin. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Handle order form
+    const form = document.getElementById('orderForm');
+    const popup = document.getElementById('successPopup');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // stop page reload
+      popup.style.display = 'flex'; // show popup
+    });
+
+    function closePopup() {
+      popup.style.display = 'none';
+      form.reset(); // reset form after success
+    }
+  </script>
+</body>
+</html>
+
